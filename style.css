@@ -1,0 +1,26 @@
+.top-banner {
+  background-color: red;
+  color: silver;
+  text-align: center;
+}
+/* 
+background-color → pinta a faixa
+
+padding → aumenta o espaço dentro da faixa
+
+text-align:center → centraliza o texto
+
+margin-top → cria espaço entre H1 e H2 
+*/
+.subtitle {
+  text-align: center;
+  margin-top: 10px;
+}
+
+h1 {
+  border: 2px solid red;
+}
+
+h2 {
+  border: 2px solid blue;
+}
