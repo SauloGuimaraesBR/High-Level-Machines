@@ -1,26 +1,87 @@
-.top-banner {
-  background-color: red;
+/* reset basico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* fundo da página */
+body {
+  background: #0f0f0f;
+}
+
+/* faixa do topo */
+.banner {
+  background-color: #8b0000;
+  padding: 25px 0;
+}
+
+/* limite do conteúdo */
+.banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* titulo principal */
+.banner-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   color: silver;
-  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
-/* 
-background-color → pinta a faixa
 
-padding → aumenta o espaço dentro da faixa
+/* logo do cavalo */
+.banner-title img {
+  width: 40px;
+  height: auto;
+}
 
-text-align:center → centraliza o texto
-
-margin-top → cria espaço entre H1 e H2 
-*/
-.subtitle {
-  text-align: center;
+/* subtitulo */
+.banner-subtitle {
   margin-top: 10px;
+  color: #d9d9d9;
+  font-size: 18px;
 }
 
-h1 {
-  border: 2px solid red;
+/* container da intro */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
 }
 
-h2 {
-  border: 2px solid blue;
+/* box da introdução */
+.intro-box {
+  background: #1f1f1f;
+  color: white;
+  padding: 30px;
+  border-radius: 40px;
+  width: 600px;
+}
+
+/* imagem da intro */
+.intro-box img {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* titulo da intro */
+.intro-box h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+/* texto da intro */
+.intro-box p {
+  line-height: 1.6;
+  color: #d0d0d0;
 }
