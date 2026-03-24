@@ -120,7 +120,18 @@ body {
 
   border-radius: 12px;
   box-shadow: 0px 15px 40px rgba(0,0,0,0.6);
-};
+  transition: all 0.30s ease;
+}
+
+/* odd sections → move left */
+.car-section:nth-child(odd) .car-image-side img:hover {
+  transform: scale(1) translateX(5px);
+}
+
+/* even sections → move right */
+.car-section:nth-child(even) .car-image-side img:hover {
+  transform: scale(1) translateX(-5px);
+}
 
 
 .car-info-side {
