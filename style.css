@@ -1,4 +1,4 @@
-/* reset basico */
+/* reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -9,26 +9,24 @@
 /* fundo da página */
 body {
   background: #2c2c2c;
+  color: white;
 }
 
 /* faixa do topo */
 .banner {
-
   background-color: #8b0000;
   padding: 25px 0;
 }
 
 /* limite do conteúdo */
 .banner-content {
-  
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* titulo principal */
+/* título principal */
 .banner-title {
-
   display: flex;
   align-items: center;
   gap: 12px;
@@ -44,7 +42,7 @@ body {
   height: auto;
 }
 
-/* subtitulo */
+/* subtítulo */
 .banner-subtitle {
   margin-top: 10px;
   color: #d9d9d9;
@@ -55,36 +53,33 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 20px 60px;
 }
 
 /* box da introdução */
 .intro-box {
-  
   background: #161616;
   color: white;
-  padding: 15px;
+  padding: 20px;
   border-radius: 40px;
   width: 100%;
   margin-top: 30px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
 }
 
 /* imagem da intro */
 .intro-box img {
-
   display: block;
   width: 100%;
-  max-width: fit-content;
-  height: 320;
-  object-fit: contain;
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
   border-radius: 20px;
   margin-bottom: 20px;
-  
 }
 
-/* titulo da intro */
+/* título da intro */
 .intro-box h2 {
-
   text-align: center;
   margin-bottom: 15px;
   font-size: 28px;
@@ -93,15 +88,85 @@ body {
 
 /* texto da intro */
 .intro-box p {
-  line-height: 1.6;
+  line-height: 1.8;
   color: #d0d0d0;
+  font-size: 16px;
 }
 
+/* faixa de transição para muscle cars */
+.muscle-divider {
+  background-color: #111111;
+  padding: 80px 20px;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  border-top: 2px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.muscle-divider::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -120px;
+  width: 140%;
+  height: 110px;
+  background: rgba(255, 255, 255, 0.12);
+  transform: rotate(-8deg);
+}
+
+.muscle-divider-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.muscle-divider-content h2 {
+  color: #f5f5f5;
+  font-size: 42px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.muscle-divider-content p {
+  color: #c0c0c0;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+/* seção dos carros */
 .car-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 60px;
+  min-height: 420px;
+  padding: 60px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.car-section:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.car-section.reverse {
+  flex-direction: row-reverse;
+}
+
+/* estilo especial para muscle cars */
+.car-section.muscle-car {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 40px;
+  margin: 30px 0;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
 }
 
 .car-image-side {
@@ -109,7 +174,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .car-image-side img {
@@ -117,22 +181,19 @@ body {
   max-width: 520px;
   display: block;
   object-fit: contain;
-
-  border-radius: 12px;
-  box-shadow: 0px 15px 40px rgba(0,0,0,0.6);
-  transition: all 0.30s ease;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
 }
 
-/* odd sections → move left */
+/* hover alternado */
 .car-section:nth-child(odd) .car-image-side img:hover {
-  transform: scale(1) translateX(5px);
+  transform: scale(1.02) translateX(5px);
 }
 
-/* even sections → move right */
 .car-section:nth-child(even) .car-image-side img:hover {
-  transform: scale(1) translateX(-5px);
+  transform: scale(1.02) translateX(-5px);
 }
-
 
 .car-info-side {
   flex: 1;
@@ -140,6 +201,7 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+
 .car-brand {
   font-size: 14px;
   color: #d9d9d9;
@@ -151,18 +213,29 @@ body {
 .car-title {
   font-size: 48px;
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   line-height: 1;
+  color: white;
 }
 
 .car-title span {
   color: #d81f26;
 }
+
+.car-description {
+  color: #cfcfcf;
+  line-height: 1.8;
+  font-size: 16px;
+  max-width: 520px;
+  margin-bottom: 30px;
+}
+
 .car-actions {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
+
 .action-btn {
   position: relative;
   display: inline-flex;
@@ -176,6 +249,7 @@ body {
   width: fit-content;
   transition: 0.3s ease;
 }
+
 .action-btn::before {
   content: "›";
   display: flex;
@@ -188,6 +262,7 @@ body {
   font-size: 18px;
   transition: 0.3s ease;
 }
+
 .action-btn:hover {
   color: #d81f26;
   transform: translateX(6px);
@@ -197,25 +272,124 @@ body {
   border-color: #d81f26;
   color: #d81f26;
 }
-.car-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 60px;
-  min-height: 420px;
-  padding: 60px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.35);
-}
-.car-section:last-child {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
-  
-}
-.car-section.reverse {
-  flex-direction: row-reverse;
+
+/* cores por carro */
+.lamborghini .car-title span {
+  color: #00a6ff;
 }
 
-.lamborghini .car-title span { color: blue; }
-.ferrari .car-title span { color: red; }
-.mercedes .car-title span { color: yellow; }
-.porsche .car-title span { color: silver; }
-.mclaren .car-title span { color: white; }
+.ferrari .car-title span {
+  color: #ff2b2b;
+}
+
+.mercedes .car-title span {
+  color: #ffd000;
+}
+
+.porsche .car-title span {
+  color: #c0c0c0;
+}
+
+.mclaren .car-title span {
+  color: #ffffff;
+}
+
+.hellcat .car-title span {
+  color: #ff3b30;
+}
+
+.charger .car-title span {
+  color: #7dff2f;
+}
+
+.camaro .car-title span {
+  color: #ffd000;
+}
+
+.mustang-darkhorse .car-title span {
+  color: #4d7cff;
+}
+
+.gt500 .car-title span {
+  color: #4da3ff;
+}
+
+/* responsivo */
+@media (max-width: 900px) {
+  .banner-title {
+    font-size: 30px;
+  }
+
+  .banner-subtitle {
+    font-size: 16px;
+  }
+
+  .intro-box img {
+    height: 280px;
+  }
+
+  .car-section,
+  .car-section.reverse,
+  .car-section.muscle-car {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .car-info-side {
+    align-items: center;
+  }
+
+  .car-description {
+    max-width: 100%;
+  }
+
+  .car-title {
+    font-size: 38px;
+  }
+
+  .muscle-divider-content h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner-title {
+    font-size: 24px;
+    gap: 10px;
+  }
+
+  .banner-title img {
+    width: 32px;
+  }
+
+  .intro-box {
+    border-radius: 24px;
+  }
+
+  .intro-box img {
+    height: 220px;
+    border-radius: 16px;
+  }
+
+  .car-title {
+    font-size: 30px;
+  }
+
+  .car-description {
+    font-size: 15px;
+  }
+
+  .muscle-divider {
+    padding: 60px 20px;
+  }
+
+  .muscle-divider-content h2 {
+    font-size: 26px;
+  }
+
+  .muscle-divider-content p {
+    font-size: 16px;
+  }
+}
